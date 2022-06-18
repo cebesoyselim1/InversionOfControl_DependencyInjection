@@ -7,11 +7,12 @@ namespace IOC.console
 {
     public class BL
     {
-        public DAL _dal { get; set; }
+        public IDAL _dal { get; set; }
 
         public BL()
         {
             _dal = DALFactory.GetDal();
+            // _dal.CalculateTotal() can't be reached until implementing on IDAL interface.
         }
 
         public List<Product> GetProducts()

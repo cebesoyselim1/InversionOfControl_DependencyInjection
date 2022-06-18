@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace IOC.console
 {
-    public class DAL
+    public class DAL:IDAL
     {
         public List<Product> GetProducts(){
             return new List<Product>()
@@ -18,6 +18,19 @@ namespace IOC.console
                 new Product(){ Id = 6, Name = "Product 6", Price = 6000, Stock = 400 },
                 new Product(){ Id = 7, Name = "Product 7", Price = 7000, Stock = 450 }
             };
+        }
+
+        // This method only used in DAL class
+        public float CalculateTotal()
+        {
+            float total = 0;
+
+            this.GetProducts().ForEach(product =>
+            {
+                total += product.Price;
+            });
+
+            return total;
         }
         
     }
