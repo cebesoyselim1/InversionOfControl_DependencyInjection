@@ -38,6 +38,3 @@ namespace IOC.console
 // Dependency Inversion(DIP) => Make sure that high level classes is not implemented by low classes directly. Interfaces and abstract classes should be used to make them loosely classes.
 
 
-
-
-
