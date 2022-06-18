@@ -9,9 +9,10 @@ namespace IOC.console
     {
         public IDAL _dal { get; set; }
 
-        public BL()
+        public BL(IDAL dal)
         {
-            _dal = DALFactory.GetDal();
+            _dal = dal;
+            //_dal = DALFactory.GetDal();
             // _dal.CalculateTotal() can't be reached until implementing on IDAL interface.
         }
 
